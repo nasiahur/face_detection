@@ -79,8 +79,10 @@ def nearest_distance(new_face):
     for i in range(foto.shape[0]):
         dist.append(distance(new_face, embedded[i]))
     
-    match, dist = show_pair(new_face, np.array(dist).argmin())
-    return match, dist 
+    idx_min = np.array(dist).argmin()
+    show_pair(new_face, idx_min)
+
+    return idx_min, dist[idx_min] 
     
 def show_pair(idx1, idx2):
     plt.figure(figsize=(8,3))
@@ -92,8 +94,6 @@ def show_pair(idx1, idx2):
     plt.xlabel(label[idx2])
     plt.show()
 
-    return idx2, distance(idx1, embedded[idx2])
-
 nn4_small2_pretrained = model.create_model()
 nn4_small2_pretrained.load_weights('models/nn4.small2.v1.h5')
     
@@ -102,7 +102,9 @@ if __name__ == "__main__":
     foto, label = prepare_database()
     print('Find vector for images in database')
     embedded = to_vector_embedded(foto)
+    print('Start camera, please enter "q" if system has detected the face')
     face_region = webcam_face_detection()
+    print('Start predicting...')
     new_face = to_vector_embedded(face_region)
     match, dist = nearest_distance(new_face)
     print('new face match to ' + label[match] + ' with distance = ' + str(dist))
