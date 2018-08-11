@@ -17,6 +17,4 @@ Repository ini berisi script untuk live view face detection. Referensi dari kode
 
 Untuk menjalankan kode ini, silakan menjalankan script `face-detection.py`. Keluaran dari script ini adalah tebakan foto paling dekat berdasarkan vektor yang dikeluarkan dari pre-trained model dari projek OpenFace. Wajah baru dicari nilai paling dekatnya dengan foto-foto yang ada di dalam database.
 
-Tetapi sebelum itu, di mohon untuk mendownload `http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2`, ekstrak file tersebut dan ubah nama menjadi `landmarks.dat`, simpan di dalam folder `models`.
-
 Untuk melihat hasil yang pernah dilakukan sebelumnya terdapat di notebook `face-detection.ipynb`. 
