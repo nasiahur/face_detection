@@ -1,6 +1,6 @@
 # Face Detection
 
-Repository ini berisi script untuk live view face detection. Referensi dari kode ini didapatkan dari:
+Repository ini berisi script untuk live view face detection. Referensi dari kode yang dibangun didapatkan dari:
 
 ### References
 
