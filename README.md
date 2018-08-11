@@ -15,6 +15,6 @@ Repository ini berisi script untuk live view face detection. Referensi dari kode
 5. http://vis-www.cs.umass.edu/lfw/
 
 
-Untuk menjalankan kode ini, silakan menjalankan script `face-detection.py`. Keluaran dari script ini adalah tebakan foto paling dekat berdasarkan vektor yang dikeluarkan dari pre-trained model dari projek OpenFace. Wajah baru dicari nilai paling dekatnya dengan foto-foto yang ada di dalam database.
+Untuk menjalankan kode ini, silakan menjalankan script `face-detection.py`. Keluaran dari script ini adalah tebakan foto paling dekat dengan foto-foto yang ada di dalam database berdasarkan vektor yang dikeluarkan dari pre-trained model dari projek OpenFace.
 
 Untuk melihat hasil yang pernah dilakukan sebelumnya terdapat di notebook `face-detection.ipynb`. 
