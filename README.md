@@ -19,7 +19,7 @@ Untuk menjalankan kode ini, silakan menjalankan script `face-detection.py`. Kelu
 
 Untuk melihat hasil yang pernah dilakukan sebelumnya terdapat di notebook `face-detection.ipynb`. 
 
-Face detection didapatkan menggunakan Histogram of Oriented Gradient dengan pustaka `dlib`. Menggunakan HOG based face detector dari dlib dibutuhkan bagian \textit{frontal} dari wajah. Apabila wajah berasal dari angle yang sulit kemungkinan tidak akan terdeteksi dengan baik. HOG membuat fiturnya dari distribusi (histogram) arah gradien (oriented gradient). Gradien (turunan dari x dan y) pada sebuah gambar dinilai berguna karena menunjukkan edge dan corner yang membawa banyak informasi untuk sebuah wajah. Langkah mendapatkan fitur yang dikeluarkan dari HOG ditunjukkan pada gambar di bawah ini:
+Face detection didapatkan menggunakan Histogram of Oriented Gradient dengan pustaka `dlib`. Menggunakan HOG *based face detector* dari dlib dibutuhkan bagian *frontal* dari wajah. Apabila wajah berasal dari angle yang sulit kemungkinan tidak akan terdeteksi dengan baik. HOG membuat fiturnya dari distribusi (histogram) arah gradien (*oriented gradient*). Gradien (turunan dari x dan y) pada sebuah gambar dinilai berguna karena menunjukkan edge dan corner yang membawa banyak informasi untuk sebuah wajah. Langkah mendapatkan fitur yang dikeluarkan dari HOG ditunjukkan pada gambar di bawah ini:
 
 <p align="center">
   <img src="images/hog.PNG" width="600" alt="accessibility text">
