@@ -105,4 +105,4 @@ if __name__ == "__main__":
     face_region = webcam_face_detection()
     new_face = to_vector_embedded(face_region)
     match, dist = nearest_distance(new_face)
-    print('new face match to ' + label[idx2] + ' with distance = ' + str(dist))
+    print('new face match to ' + label[match] + ' with distance = ' + str(dist))
