@@ -37,14 +37,14 @@ def prepare_database():
     foto = []
     
     for img in glob.glob('database/*.jpg'):
-        label.append(str(img).split('/')[1].split('.')[0])
+        label.append(str(img).split('\\')[1].split('.')[0])
         image = cv2.imread(img)
         image = cv2.resize(image, (250,250))
         foto.append(np.array(image))
     return np.array(foto), np.array(label)
 
 def webcam_face_detection():
-    video_capture = cv2.VideoCapture(0) # use for ipcamera "http://192.168.43.1:8080/video")
+    video_capture = cv2.VideoCapture(0) # for ip camera "http://192.168.43.1:8080/video")
     detector = dlib.get_frontal_face_detector()
 
     while True:
