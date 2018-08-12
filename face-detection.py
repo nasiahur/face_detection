@@ -44,7 +44,7 @@ def prepare_database():
     return np.array(foto), np.array(label)
 
 def webcam_face_detection():
-    video_capture = cv2.VideoCapture(0) # for ip camera "http://192.168.43.1:8080/video")
+    video_capture = cv2.VideoCapture(0)# for ip camera "http://192.168.43.61:8080/video")
     detector = dlib.get_frontal_face_detector()
 
     while True:
@@ -90,7 +90,7 @@ def show_pair(idx1, idx2):
     plt.subplot(121)
     plt.imshow(face_region)
     plt.subplot(122)
-    plt.imshow(align_image(foto[idx2]))
+    plt.imshow(foto[idx2])
     plt.xlabel(label[idx2])
     plt.show()
 
