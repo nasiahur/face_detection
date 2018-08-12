@@ -37,7 +37,10 @@ def prepare_database():
     foto = []
     
     for img in glob.glob('database/*.jpg'):
-        label.append(str(img).split('\\')[1].split('.')[0])
+        try:
+            label.append(str(img).split('/')[1].split('.')[0])
+        except:
+            label.append(str(img).split('\\')[1].split('.')[0])
         image = cv2.imread(img)
         image = cv2.resize(image, (250,250))
         foto.append(np.array(image))
@@ -52,7 +55,6 @@ def webcam_face_detection():
 
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         rects = detector(gray, 0)
-        print(rects)
         for face in rects:
             x = face.left()
             y = face.top() 
@@ -65,11 +67,12 @@ def webcam_face_detection():
 
         if cv2.waitKey(1) & 0xFF == ord('q'):
             cv2.imwrite('only_face.jpg', face_region)
-            return face_region
             break
 
     video_capture.release()
     cv2.destroyAllWindows()
+    
+    return face_region
     
 def distance(emb1, emb2):
     return np.sum(np.square(emb1 - emb2))
@@ -98,9 +101,9 @@ nn4_small2_pretrained = model.create_model()
 nn4_small2_pretrained.load_weights('models/nn4.small2.v1.h5')
     
 if __name__ == "__main__":
-    print('Prepare database')
+    print('Prepare database ... ')
     foto, label = prepare_database()
-    print('Find vector for images in database')
+    print('Find vector for images in database ... ')
     embedded = to_vector_embedded(foto)
     print('Start camera, please enter "q" if system has detected the face')
     face_region = webcam_face_detection()
