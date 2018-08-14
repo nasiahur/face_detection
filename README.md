@@ -28,10 +28,16 @@ Face detection didapatkan menggunakan Histogram of Oriented Gradient dengan pust
 
 Kemudian dari _face region_ yang dikeluarkan oleh `HOG dlib`, dimasukkan ke dalam pre-trained network yang dikembangkan oleh OpenFace untuk mengeluarkan _emmbedded vector_ -nya. _Embedded vector new face_ dihitung `euclidean distance`-nya dengan _embedded vector_ wajah yang ada di dalam _database_. Wajah paling mirip didapatkan dari jarak eulidean yang paling kecil. 
 
+_Pre trained model_ yang digunakan adalah nn4.small2.v1 dengan pertimbangan _runtime_ yang kecil dan akurasi yang lebih baik dari model yang dikembangkan OpenFace. Dengan menggunakan convolutional layer dan mengadaptasi layer inception, model ini mampu memberikan hasil yang baik pada kasus ini.  
+
 Untuk mengintegrasikan fungsi ini kepada sistem yang sudah ada, berikut adalah alur kerja yang bisa dilakukan:
 
 <p align="center">
-  <img src="images/integrasi.PNG" width="600" alt="accessibility text">
+  <img src="images/integrating.PNG" width="600" alt="accessibility text">
 </p>
 
 Pada sistem yang sudah ada bisa dibuatkan aplikasi baru atau fitur baru yang akan memanggil fungsi/script face dectection. Fungsi ini akan mengeluarkan hasil prediksi yang kemudian dapat ditangkap, dilaporkan atau langsung disimpan di dalam database. 
+
+
+Video demo dari aplikasi ini dapat dilihat pada tautan berikut: http://bit.ly/face-detection-asiah-qlue
+
