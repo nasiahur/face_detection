@@ -24,3 +24,14 @@ Face detection didapatkan menggunakan Histogram of Oriented Gradient dengan pust
 <p align="center">
   <img src="images/hog.PNG" width="600" alt="accessibility text">
 </p>
+
+
+Kemudian dari _face region_ yang dikeluarkan oleh `HOG dlib`, dimasukkan ke dalam pre-trained network yang dikembangkan oleh OpenFace untuk mengeluarkan _emmbedded vector_ -nya. _Embedded vector new face_ dihitung `euclidean distance`-nya dengan _embedded vector_ wajah yang ada di dalam _database_. Wajah paling mirip didapatkan dari jarak eulidean yang paling kecil. 
+
+Untuk mengintegrasikan fungsi ini kepada sistem yang sudah ada, berikut adalah alur kerja yang bisa dilakukan:
+
+<p align="center">
+  <img src="images/integrasi.PNG" width="600" alt="accessibility text">
+</p>
+
+Pada sistem yang sudah ada bisa dibuatkan aplikasi baru atau fitur baru yang akan memanggil fungsi/script face dectection. Fungsi ini akan mengeluarkan hasil prediksi yang kemudian dapat ditangkap, dilaporkan atau langsung disimpan di dalam database. 
